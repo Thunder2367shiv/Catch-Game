@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+}
+.maincontent{
+    border:10px solid black;
+    height: 97.3vh;
+    width: 98.7vw;
+    background-image: url(road.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.score{
+    color: beige;
+    padding:3px;
+    font-weight: 900;
+    font-size: 25px;
+    margin: 10px 40vw;
+    display: flex;
+    justify-content: center;
+    align-items:end;
+    border:5px solid black;
+    background-color: rgb(45, 156, 156);
+}
+.player{
+    left:15vw;
+    height: 35vh;
+    width:14vw;
+    background-image: url(player.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: contain;
+    bottom: 0;
+}
+.player_copy{
+    top:35vh;
+    visibility: hidden;
+    left:43vw;
+    height: 35vh;
+    width:14vw;
+    background-image: url(player.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: contain;
+}
+ .obstacle{
+    left: 80vw;
+    height: 30vh;
+    width:15vw;
+    background-image: url(snake.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: contain;
+    bottom: 0;
+    
+}
+.game_over{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-weight: 900;
+    visibility: hidden;
+    color:black;
+    flex-direction: column;
+}
+.mybutt{
+    font-size: 50px;
+    visibility: hidden;
+    color:white;
+    background-color: red;
+    border-radius: 20px;
+    border:10px solid black;
+}
+
+.obstacle_animation{
+    animation: snake_move 2s linear infinite;
+}
+
+.animate_player{
+    animation:player_move 0.7s linear;
+}
+.animate_player_forword{
+    animation:player_move_forword 0.7s linear;
+}
+
+@keyframes snake_move {
+    0%{
+        left:100vw;
+    }
+    100%{
+        left:-10vw;
+    }
+}
+
+@keyframes player_move {
+    0%{
+        bottom:0;
+    }
+    50%{
+        bottom:470px;
+    }
+    100%{
+        bottom:0;
+    }
+}
+
+@keyframes player_move_forword {
+    0%{
+        bottom:0;
+        left:0;
+    }
+    50%{
+        bottom:470px;
+        left:250px;
+    }
+    100%{
+        bottom:0;
+        left:250px;
+    }
+}
